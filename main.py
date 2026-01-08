@@ -11,9 +11,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(title="World DB Full API", version="3.0.0")
 
 
-# ==========================================
-# 1. CRUD CITY (ID Autoincremental)
-# ==========================================
+# 1. CRUD CITY
 
 @app.post("/cities/", response_model=schemas.CityResponse, tags=["City"])
 def create_city(city: schemas.CityCreate, db: Session = Depends(get_db)):
@@ -61,9 +59,7 @@ def delete_city(id: int, db: Session = Depends(get_db)):
     return {"message": "Ciudad eliminada"}
 
 
-# ==========================================
 # 2. CRUD COUNTRY (ID manual de 3 letras)
-# ==========================================
 
 @app.post("/countries/", response_model=schemas.CountryResponse, tags=["Country"])
 def create_country(country: schemas.CountryCreate, db: Session = Depends(get_db)):
@@ -111,9 +107,7 @@ def delete_country(code: str, db: Session = Depends(get_db)):
     return {"message": f"País {code} eliminado junto con sus ciudades e idiomas."}
 
 
-# ==========================================
 # 3. CRUD COUNTRYLANGUAGE (Clave Compuesta)
-# ==========================================
 
 @app.post("/languages/", response_model=schemas.LanguageResponse, tags=["Language"])
 def create_language(lang: schemas.LanguageCreate, db: Session = Depends(get_db)):
@@ -137,7 +131,6 @@ def list_languages(skip: int = 0, limit: int = 20, db: Session = Depends(get_db)
     return db.query(models.CountryLanguage).offset(skip).limit(limit).all()
 
 
-# Endpoint para obtener un idioma específico: Requiere AMBOS IDs
 @app.get("/languages/{country_code}/{language}", response_model=schemas.LanguageResponse, tags=["Language"])
 def get_language(country_code: str, language: str, db: Session = Depends(get_db)):
     lang = db.query(models.CountryLanguage).filter(

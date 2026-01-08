@@ -1,8 +1,8 @@
-# 🌍 World API - FastAPI & MariaDB
+# World API - FastAPI & MariaDB
 
 Una API REST profesional construida con **Python** y **FastAPI** para gestionar una base de datos geográfica mundial (`world`). Permite realizar operaciones CRUD completas sobre Ciudades, Países e Idiomas.
 
-## 🚀 Características
+## Características
 
 * **Tecnología Moderna:** Backend asíncrono y veloz con FastAPI.
 * **Base de Datos Relacional:** Integración con MariaDB/MySQL usando SQLAlchemy.
@@ -15,7 +15,7 @@ Una API REST profesional construida con **Python** y **FastAPI** para gestionar 
 
 ---
 
-## 🛠️ Requisitos Previos
+## Requisitos Previos
 
 * Python 3.10 o superior.
 * Servidor MariaDB o MySQL corriendo localmente.
@@ -23,7 +23,7 @@ Una API REST profesional construida con **Python** y **FastAPI** para gestionar 
 
 ---
 
-## 📦 Instalación y Configuración
+## Instalación y Configuración
 
 Sigue estos pasos para poner en marcha el proyecto:
 
@@ -62,7 +62,7 @@ uvicorn main:app --reload
 ````
 
 
-## 📖 Documentación de la API
+## Documentación de la API
 
 * Swagger UI (Panel Interactivo): http://127.0.0.1:8000/docs
   * Aquí puedes probar los endpoints (GET, POST, PUT, DELETE) directamente.
@@ -70,13 +70,13 @@ uvicorn main:app --reload
 
 
 
-## ⚡ Ejemplos de JSON (Quick Start)
+## Ejemplos de JSON (Quick Start)
 
 Aquí tienes ejemplos de cuerpos JSON (`body`) listos para probar los endpoints en Postman.
 
 A continuación se detallan todos los endpoints disponibles, organizados por entidad.
 
-### 🏙️ Ciudades (Cities)
+### Ciudades (Cities)
 
 | Método   | Endpoint       | Descripción                                                   |
 |:---------|:---------------|:--------------------------------------------------------------|
@@ -106,7 +106,7 @@ A continuación se detallan todos los endpoints disponibles, organizados por ent
   "HeadOfState": "Guido van Rossum"
 }
 ````
-### 🏳️ Países (Countries)
+### Países (Countries)
 
 | Método   | Endpoint            | Descripción                                                 |
 |:---------|:--------------------|:------------------------------------------------------------|
@@ -127,7 +127,7 @@ A continuación se detallan todos los endpoints disponibles, organizados por ent
   "Population": 150000
 }
 ````
-### 🗣️ Idiomas (Languages)
+### Idiomas (Languages)
 
 | Método   | Endpoint                   | Descripción                                              |
 |:---------|:---------------------------|:---------------------------------------------------------|
